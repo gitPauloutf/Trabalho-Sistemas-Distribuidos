@@ -10,10 +10,10 @@ export class AuthController {
     ) {}
 
   
-  @UseGuards(AuthGuard('local'))
+  //@UseGuards(AuthGuard('local'))
   @Post('login')
   async singIn(@Req() req: any) {
-    return await this.authService.singIn(req.user);
+    return await this.authService.singIn(req.body.data);
   }
   @Get()
   login() {
